@@ -1,12 +1,14 @@
 class BankAccount:
-    def _init_(self, initial_balance=0.0):
+    def __init__(self, initial_balance=0.0):
         """Initialize the account with an optional initial balance."""
-        self.__account_balance = initial_balance 
+        self.__account_balance = initial_balance  # Private attribute for encapsulation
 
     def deposit(self, amount):
-        """Add the specified amount to the account balance."""
+        """Add the specified amount to account balance."""
         if amount > 0:
             self.__account_balance += amount
+            return True
+        return False
 
     def withdraw(self, amount):
         """Withdraw an amount if sufficient funds are available."""
